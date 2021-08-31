@@ -6,12 +6,11 @@ except ImportError:
 import pytesseract
 import shutil
 import os.path 
-#import pdb
 
 #Path Initialization
 #################################
-base_dir = '/media/chinmay/TOSHIBA EXT/P_bckp_8_2020/WhatsApp/Media/WhatsApp Images/*.jpg'
-no_text_dir = '/media/chinmay/TOSHIBA EXT/P_bckp_8_2020/WhatsApp/Media/NoText/'
+base_dir = '<path to folder with mixed images>/*.jpg'
+no_text_dir = '<path to folder where images with no text needs to be copied>'
 
 def ocr_core(filename):
     text = pytesseract.image_to_string(Image.open(filename)) 
@@ -23,7 +22,7 @@ def check_if_all_none(list_of_elem):
             return True
     return False
 
-print('\nNumber of files') 
+print('\nNumber of files : ') 
 files = glob.glob(base_dir) 
 a = len(files)
 print(a)
